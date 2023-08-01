@@ -1,5 +1,4 @@
 from flask import request, jsonify
-import jwt
 from profanityfilter import ProfanityFilter
 import os
 
@@ -14,7 +13,6 @@ def check_description_profanity():
     try:
         text = request.json.get('description')
         is_clear = pf.is_clean(text)
-        return jsonify({'is_clear':is_clear})
+        return jsonify({'is_clear': is_clear})
     except Exception as e:
         return jsonify({'error': str(e)}), 400
-
