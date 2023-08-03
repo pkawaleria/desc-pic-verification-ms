@@ -6,8 +6,6 @@ basedir = os.path.abspath(os.path.dirname(__file__))
 
 DEBUG = True
 
-SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://root:@localhost/inz'
+SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://root:@localhost/images'
 
 SQLALCHEMY_TRACK_MODIFICATIONS = False
-
-PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION = 'python'
