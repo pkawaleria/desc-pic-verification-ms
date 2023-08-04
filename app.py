@@ -2,14 +2,10 @@ from flask import Flask
 from flask_migrate import Migrate
 from routes.routes import image, description
 from models.data import db
-from flask_bcrypt import Bcrypt
-
-bcrypt = Bcrypt()
 
 def create_app():
     app = Flask(__name__)
     app.config.from_object('config')
-    bcrypt.init_app(app)
     db.init_app(app)
     return app
 
