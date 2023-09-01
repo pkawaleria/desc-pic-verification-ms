@@ -2,7 +2,7 @@ from flask import request, jsonify
 from profanityfilter import ProfanityFilter
 import os
 
-file_path = os.path.abspath('./sources/banwords.txt')
+file_path = os.path.join(os.path.dirname(__file__), '..', 'sources', 'banwords.txt')
 
 with open(file_path, "r", encoding='utf-8') as f:
     custom_list = [l.replace("\n", "") for l in f.readlines()]
