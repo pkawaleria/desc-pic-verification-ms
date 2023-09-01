@@ -6,6 +6,11 @@ basedir = os.path.abspath(os.path.dirname(__file__))
 
 DEBUG = True
 
-SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://root:@localhost/images'
+DB_USER = 'root'
+DB_PASSWORD = os.environ.get('DB_PASSWORD') or 'password'
+DB_HOST = 'localhost'
+DB_NAME = 'images'
+
+SQLALCHEMY_DATABASE_URI = f'mysql+pymysql://{DB_USER}:{DB_PASSWORD}@{DB_HOST}/{DB_NAME}'
 
 SQLALCHEMY_TRACK_MODIFICATIONS = False
