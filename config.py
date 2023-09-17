@@ -8,7 +8,7 @@ DEBUG = True
 
 DB_USER = 'root'
 DB_PASSWORD = os.environ.get('DB_PASSWORD') or 'password'
-DB_HOST = 'localhost'
+DB_HOST = 'db_images'
 DB_NAME = 'images'
 
 SQLALCHEMY_DATABASE_URI = f'mysql+pymysql://{DB_USER}:{DB_PASSWORD}@{DB_HOST}/{DB_NAME}'
