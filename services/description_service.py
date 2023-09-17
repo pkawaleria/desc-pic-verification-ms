@@ -11,8 +11,8 @@ pf = ProfanityFilter(custom_censor_list=custom_list)
 
 def check_description_profanity():
     try:
-        text = request.json.get('description')
+        text = request.json.get('text')
         is_clear = pf.is_clean(text)
-        return jsonify({'is_clear': is_clear})
+        return jsonify({'has_inappropriate_content': not is_clear})
     except Exception as e:
         return jsonify({'error': str(e)}), 400
